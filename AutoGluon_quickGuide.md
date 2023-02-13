@@ -1,1 +1,24 @@
+# AutlGluon - Quck Quide of Implementation
 
+*Last Updated: 2023-02-13*
+
+
+**References:**
+
+- https://auto.gluon.ai/stable/index.html
+- https://www.udacity.com/course/aws-machine-learning-engineer-nanodegree--nd189
+
+
+#### Quick Implementation
+
+```python
+from autogluon.tabular import TabularPredictor
+
+# create model and train
+model = TabularPredictor(label='y').fit(train_data=df, time_limit=100, presets='best_quality')
+
+model.fit_summary()
+
+# inference
+model.evaluate(df_test)
+```
