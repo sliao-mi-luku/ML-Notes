@@ -31,12 +31,12 @@ model.predict(df_dmatrix)
 ```python
 import sagemaker
 
-session = sagemaker.Session()
+session = sagemaker.Session()  # default S3 bucket: session.default_bucket()
 
 container = sagemaker.image_uris.retrieve('xgboost', session.boto_region_name, version='latest')
 
 xgb = sagemaker.estimator.Estimator(container, role, instance_count=1, instance_type='ml.m5.xlarge',
-                                    output_path="{}/output".format(session.default_bucket()),
+                                    output_path="<OUTPUT_S3_PATH>",
                                     sagemaker_session=session)
 
 xgb.set_hyperparameters(max_depth=5, eta=0.2, gamma=4, min_child_weight=6, subsample=0.8, objective='reg:linear', early_stopping_rounds=10, num_round=200)
