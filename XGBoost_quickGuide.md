@@ -8,6 +8,7 @@
 - https://xgboost.readthedocs.io/en/stable/get_started.html
 - https://xgboost.readthedocs.io/en/stable/python/python_api.html
 - https://www.udacity.com/course/aws-machine-learning-engineer-nanodegree--nd189
+- https://github.com/udacity/udacity-nd009t-C2-Developing-ML-Workflow/tree/master
 
 
 #### Quick Implementation
