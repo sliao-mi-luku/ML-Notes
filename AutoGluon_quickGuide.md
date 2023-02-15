@@ -15,7 +15,11 @@
 from autogluon.tabular import TabularPredictor
 
 # create model and train
+# classification
 model = TabularPredictor(label='y').fit(train_data=df, time_limit=100, presets='best_quality')
+# regression
+model = TabularPredictor(label='y', problem_type='regression', eval_metric='r2').fit(train_data=df, time_limit=100, presets='best_quality')
+
 
 model.fit_summary()
 
