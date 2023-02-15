@@ -19,6 +19,11 @@ model = TabularPredictor(label='y').fit(train_data=df, time_limit=100, presets='
 
 model.fit_summary()
 
+# compare models
+model.leaderboard()
+
+model.leaderboard(silent=True).plot(kind="bar", x="model", y="score_val")
+
 # inference
 model.evaluate(df_test)
 ```
