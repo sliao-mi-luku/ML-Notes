@@ -1,7 +1,7 @@
-# AWS for Machine Learning Workflows
+# Machine Learning Workflows with AWS
 
 
-## Data
+## Data Wrangling
 
 ## Model Training
 
@@ -13,8 +13,7 @@
 
 - Spot instances (EC2) ([AWS link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html))
 - Distributed computing ([AWS link](https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html))
-
-
+- Distributed data (EC2) ([parameters](https://docs.aws.amazon.com/cdk/api/v1/python/aws_cdk.aws_stepfunctions_tasks/S3DataDistributionType.html))
 
 
 ## References
