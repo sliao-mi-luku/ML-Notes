@@ -18,6 +18,8 @@
 - Lambda function
 - Automatic scaling / Concurrency ([AWS page](https://docs.aws.amazon.com/lambda/latest/operatorguide/scaling-concurrency.html))
 - Feature store
+- IAM
+- Virtual Private Cloud (VPC)
 
 ## References
 
