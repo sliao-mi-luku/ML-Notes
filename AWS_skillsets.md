@@ -11,10 +11,13 @@
 
 ## Model Operationalizing
 
-- Spot instances (EC2) ([AWS link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html))
-- Distributed computing ([AWS link](https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html))
+- Spot instances (EC2) ([AWS page](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html))
+- Distributed computing ([AWS page](https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html))
 - Distributed data (EC2) ([parameters](https://docs.aws.amazon.com/cdk/api/v1/python/aws_cdk.aws_stepfunctions_tasks/S3DataDistributionType.html))
 - Data stores ([Reviews](https://www.missioncloud.com/blog/resource-amazon-ebs-vs-efs-vs-s3-picking-the-best-aws-storage-option-for-your-business))
+- Lambda function
+- Automatic scaling / Concurrency ([AWS page](https://docs.aws.amazon.com/lambda/latest/operatorguide/scaling-concurrency.html))
+- Feature store
 
 ## References
 
