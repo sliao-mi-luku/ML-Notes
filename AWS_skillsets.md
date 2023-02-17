@@ -5,7 +5,14 @@
 
 ## Model Training
 
+- TensorFlow estimator ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/frameworks/tensorflow))
+- PyTorch estimator ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/frameworks/pytorch))
+- Hyperparameter tuning ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/hyperparameter_tuning))
+- SageMaker debugger/profiling ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/sagemaker-debugger))
+
 ## Model Deployment
+
+- 
 
 ## Model Monitoring
 
