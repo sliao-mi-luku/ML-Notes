@@ -8,13 +8,14 @@
 - Available images ([lists](https://github.com/aws/deep-learning-containers/blob/master/available_images.md))
 - TensorFlow estimator ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/frameworks/tensorflow))
 - PyTorch estimator ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/frameworks/pytorch))
-- Bring your own model ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/advanced_functionality))
+- Bring your own model ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/advanced_functionality))([AWS page](https://aws.amazon.com/blogs/machine-learning/bring-your-own-model-with-amazon-sagemaker-script-mode/))
 - Hyperparameter tuning ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/hyperparameter_tuning))
 - SageMaker debugger/profiling ([Example codes](https://github.com/aws/amazon-sagemaker-examples/tree/main/sagemaker-debugger))
 
 ## Model Deployment
 
 - Batch transform ([AWS page](https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html))
+- CreateModel API
 
 ## Model Monitoring
 
