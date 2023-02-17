@@ -14,6 +14,8 @@
 
 ## Model Deployment
 
+- Endpoint ([AWS page](https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html))
+- Multi-AZ deployment ([AWS page](https://aws.amazon.com/blogs/database/amazon-rds-under-the-hood-multi-az/))
 - Batch transform ([AWS page](https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html))
 - CreateModel API
 
