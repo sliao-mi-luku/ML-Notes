@@ -3,6 +3,8 @@
 
 ## Data Wrangling
 
+- Feature store
+
 ## Model Training
 
 - Available images ([lists](https://github.com/aws/deep-learning-containers/blob/master/available_images.md))
@@ -21,10 +23,14 @@
 
 ## Model Monitoring
 
+- Model monitor ([AWS page](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html))
+- Clarify ([AWS page](https://aws.amazon.com/sagemaker/clarify/?sagemaker-data-wrangler-whats-new.sort-by=item.additionalFields.postDateTime&sagemaker-data-wrangler-whats-new.sort-order=desc))
+- Model retraining
+
 ## Workflow Design
 
 - AWS Lambda ([AWS page](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html))
-- 
+- AWS Step Function
 
 ## Model Operationalizing
 
