@@ -21,6 +21,11 @@
 
 ## Model Monitoring
 
+## Workflow Design
+
+- AWS Lambda ([AWS page](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html))
+- 
+
 ## Model Operationalizing
 
 - Spot instances (EC2) ([AWS page](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html))
