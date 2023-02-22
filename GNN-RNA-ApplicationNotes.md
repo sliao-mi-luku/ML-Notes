@@ -43,3 +43,13 @@ model = HinSAGE(layer_sizes=[128], activations=["relu"], generator=hinsage_gener
 
 
 ```
+
+#### HinSAGE implementation (PyG with PyTorch)
+
+Example: https://pytorch-geometric.readthedocs.io/en/latest/notes/heterogeneous.html
+
+```python
+# https://pytorch-geometric.readthedocs.io/en/latest/notes/heterogeneous.html
+
+```
+
