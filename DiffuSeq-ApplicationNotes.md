@@ -8,6 +8,20 @@ Original GitHub Repository: https://github.com/Shark-NLP/DiffuSeq
 
 ---
 
+## Data Format
+
+```python
+#
+data = load_data_text(...)  # diffuseq/text_datasets.py
+```
+
+**load_data_text()**
+
+https://github.com/Shark-NLP/DiffuSeq/blob/main/diffuseq/text_datasets.py#L11
+
+
+
+
 
 ## Decoding
 
@@ -44,9 +58,42 @@ Runs `sample_seq2seq.py` with arguments `model_path`, `step`, `batch_size`, `see
 
 https://github.com/Shark-NLP/DiffuSeq/blob/main/sample_seq2seq.py
 
+
+
 ```python
 # create model and diffusion
-model, diffusion = create_model_and_diffusion(...)
+model, diffusion = create_model_and_diffusion(...) # basic_utils.py
 
+"""
+create_model_and_diffusion()
+  
+  model = TransformerNetModel(...)  # diffuseq/transformer_model
+
+"""
 
 ```
+
+```python
+# initiate an instance of tokenizer
+tokenizer = load_tokenizer(args)  # basic_utils.py
+
+
+# create embedding layer (input dim: tokenizer.vocab_size, output dim: args.hidden_dim)
+model_emb, tokenizer = load_model_emb(args, tokenizer) # basic_utils.py
+
+```
+
+**Decoding procedures**
+
+
+```python
+"""
+Reference: https://github.com/Shark-NLP/DiffuSeq/blob/main/sample_seq2seq.py#L122
+"""
+```
+
+
+
+
+
+
