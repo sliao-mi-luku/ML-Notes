@@ -42,6 +42,8 @@ Runs `sample_seq2seq.py` with arguments `model_path`, `step`, `batch_size`, `see
 
 **sample_seq2seq.py**
 
+https://github.com/Shark-NLP/DiffuSeq/blob/main/sample_seq2seq.py
+
 ```python
 # create model and diffusion
 model, diffusion = create_model_and_diffusion(...)
