@@ -7,6 +7,61 @@ Original paper: https://arxiv.org/abs/2205.14217
 Original implementation code: https://github.com/XiangLi1999/Diffusion-LM
 
 ---
+## The model
+
+The authors used `create_model_and_diffusion()` to create model.
+
+https://github.com/XiangLi1999/Diffusion-LM/blob/main/improved-diffusion/improved_diffusion/script_util.py#L47
+
+The model architecture (denoted as `model_arch`) can be `conv-unet`, `1d-unet`, `trans-unet`, `transformer` (used as the exmample on the authors' GitHub).
+
+#### transformer
+
+UNet with attention and time encoding ([implimentation](https://github.com/XiangLi1999/Diffusion-LM/blob/759889d58ef38e2eed41a8c34db8032e072826f4/improved-diffusion/improved_diffusion/transformer_model2.py#L674)).
+
+```python
+## Excerpts from original code
+# source: https://github.com/XiangLi1999/Diffusion-LM/blob/759889d58ef38e2eed41a8c34db8032e072826f4/improved-diffusion/improved_diffusion/script_util.py#L239
+elif model_arch == 'transformer':
+    if image_size == 256:
+        channel_mult = (1, 1, 2, 2, 4, 4)
+    elif image_size == 64:
+        channel_mult = (1, 2, 3, 4)
+    elif image_size == 32:
+        channel_mult = (1, 2, 2, 2)
+    elif image_size == 16:  # DEBUG**
+        channel_mult = (1, 2, 2, 2)
+    else:
+        channel_mult = (1, 2, 2, 2)
+
+    attention_ds = []
+    
+    for res in attention_resolutions.split(","):   # attention_resolutions. defaut: "16,8" (?)
+        attention_ds.append(image_size // int(res))
+    
+    # https://github.com/XiangLi1999/Diffusion-LM/blob/759889d58ef38e2eed41a8c34db8032e072826f4/improved-diffusion/improved_diffusion/transformer_model2.py#L674
+    return TransformerNetModel2(
+        in_channels=in_channel,  # 3, DEBUG**
+        model_channels=num_channels,
+        out_channels=(out_channel if not learn_sigma else out_channel*2),  # DEBUG**  (3 if not learn_sigma else 6),
+        num_res_blocks=num_res_blocks,
+        attention_resolutions=tuple(attention_ds),
+        dropout=dropout,
+        channel_mult=channel_mult,
+        num_classes=(NUM_CLASSES if class_cond else None),
+        use_checkpoint=use_checkpoint,
+        num_heads=num_heads,
+        num_heads_upsample=num_heads_upsample,
+        use_scale_shift_norm=use_scale_shift_norm,
+        config_name=config_name,
+        training_mode=training_mode,
+        vocab_size=vocab_size,
+        experiment_mode=experiment_mode,
+        logits_mode=logits_mode,
+    )
+```
+
+
 
 
 ## Decoding
