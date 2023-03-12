@@ -1,5 +1,7 @@
 # Notes for applying Difusion-LM
 
+This document summarizes the implementation/application notes for Diffusion-LM (Li et al., 2002).
+
 **References**
 
 Original paper: https://arxiv.org/abs/2205.14217
@@ -7,7 +9,12 @@ Original paper: https://arxiv.org/abs/2205.14217
 Original implementation code: https://github.com/XiangLi1999/Diffusion-LM
 
 ---
-## The model
+
+## The Diffusion Process
+
+
+
+## The Model
 
 The authors used `create_model_and_diffusion()` to create model.
 
@@ -15,7 +22,7 @@ https://github.com/XiangLi1999/Diffusion-LM/blob/main/improved-diffusion/improve
 
 The model architecture (denoted as `model_arch`) can be `conv-unet`, `1d-unet`, `trans-unet`, `transformer` (used as the exmample on the authors' GitHub).
 
-#### transformer
+#### 'model_arch' == 'transformer'
 
 UNet with attention and time encoding ([implimentation](https://github.com/XiangLi1999/Diffusion-LM/blob/759889d58ef38e2eed41a8c34db8032e072826f4/improved-diffusion/improved_diffusion/transformer_model2.py#L674)).
 
@@ -61,6 +68,22 @@ elif model_arch == 'transformer':
     )
 ```
 
+
+## Training
+
+Reference: https://github.com/XiangLi1999/Diffusion-LM#train-diffusion-lm
+
+For the E2E task (50k restaurant reviews, 821 vocab), the embedding dimension of the tokenized input sequence is set to be **16**, modality to be **e2e-tgt**, submit to be **no**.
+
+```sh
+python scripts/run_train.py --diff_steps 2000 --model_arch transformer --lr 0.0001 --lr_anneal_steps 200000  --seed 102 --noise_schedule sqrt --in_channel 16 --modality e2e-tgt --submit no --padding_mode block --app "--predict_xstart True --training_mode e2e --vocab_size 821  --e2e_train ../datasets/e2e_data " --notes xstart_e2e
+```
+
+For the ROCStories task (98k five-sentence stories, 11k vocab), the embedding dimension of the tokenized input sequence is set to be **128**.
+
+```sh
+python scripts/run_train.py --diff_steps 2000 --model_arch transformer --lr 0.0001 --lr_anneal_steps 400000  --seed 101 --noise_schedule sqrt  --in_channel 128 --modality roc --submit no --padding_mode pad  --app "--predict_xstart True --training_mode e2e  --vocab_size 11043  --roc_train ../datasets/ROCstory " --notes xstart_e2e --bsz 64
+```
 
 
 
